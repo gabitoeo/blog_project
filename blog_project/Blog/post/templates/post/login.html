@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Iniciar Sesión</h2>
+  <h2> Iniciar Sesión </h2>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" style="background-color: #4CAF50; color: white;">Iniciar Sesión</button>
+    <button type="submit" style="background-color: #4CAF50; color: white;"> Iniciar Sesión </button>
   </form>
   
-  <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
+  <p> ¿No tienes una cuenta? <a href="{% url 'register' %}"> Regístrate aquí </a></p>
 {% endblock %}
