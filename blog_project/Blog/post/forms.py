@@ -11,3 +11,4 @@ class CustomUserCreationForm(UserCreationForm):
         self.fields['username'].help_text = None 
         self.fields['password1'].help_text = 'La contraseña debe tener al menos 8 caracteres.'
         self.fields['password2'].help_text = 'Ingresa la misma contraseña para confirmarla.'
+

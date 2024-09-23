@@ -1,10 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2 style="color: #4CAF50;"> Crear una nueva publicacion </h2>
+  <h2 style="color: #4CAF50;">Crear una nueva publicación</h2>
+  
   <form method="POST" style="background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px;"> Crear </button>
+    
+    <!-- Personalización de etiquetas -->
+    <div style="margin-bottom: 10px;">
+      <label for="id_title" style="font-weight: bold;">Título:</label>
+      {{ form.title }}
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+      <label for="id_content" style="font-weight: bold;">Contenido:</label>
+      {{ form.content }}
+    </div>
+    
+    <!-- Botón de enviar -->
+    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+      Crear
+    </button>
   </form>
 {% endblock %}
