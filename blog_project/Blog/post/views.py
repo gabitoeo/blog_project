@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from .models import Post
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 class PostCreateView(CreateView):
     model = Post
@@ -40,4 +44,29 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = 'post/post_confirm_delete.html'
     success_url = reverse_lazy('post-list')
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}!')
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'post/register.html', {'form': form})
+
+
+@method_decorator(login_required, name='dispatch')
+class PostCreateView(CreateView):
+    model = Post
+    fields = ['title', 'content']
+    template_name = 'post/post_form.html'
+    success_url = reverse_lazy('post-list')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
     
