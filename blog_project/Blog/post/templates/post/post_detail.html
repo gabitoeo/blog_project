@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 style="color: #333;">{{ post.title }}</h2>
+  <p style="color: #555;">by {{ post.author }} on {{ post.date_posted }}</p>
+  <p style="font-size: 16px;">{{ post.content }}</p>
+  <a href="{% url 'post-update' post.id %}" style="color: #FF9800;"> Editar </a> | 
+  <a href="{% url 'post-delete' post.id %}" style="color: #F44336;"> Eliminar</a>
+{% endblock %}
+
