@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2 style="color: #333;">All Posts</h2>
+  <h2 style="color: #333;">Posteos</h2>
+  
   <ul style="list-style: none; padding: 0;">
     {% for post in posts %}
       <li style="background-color: #e0e0e0; margin-bottom: 10px; padding: 15px; border-radius: 5px;">
         <a href="{% url 'post-detail' post.id %}" style="color: #2196F3; font-size: 18px;">{{ post.title }}</a>
-        <p style="color: #777;">by {{ post.author }} on {{ post.date_posted }}</p>
+        <p style="color: #777;">por {{ post.author }} el {{ post.date_posted }}</p>
       </li>
     {% endfor %}
   </ul>
+    <a href="{% url 'logout' %}" style="color: red; display: inline-block; margin-bottom: 15px;">Cerrar Sesión</a>
 {% endblock %}
