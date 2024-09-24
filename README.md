@@ -1,7 +1,7 @@
 # blog_project
 Trabajo Practico N3 - Programacion Web II
 
-Descripcion del proyecto
+# Descripcion del proyecto
 El proyecto es una aplicación web tipo blog desarrollada con Django. Permite a los usuarios autenticados crear, ver, editar y eliminar publicaciones. Además, incluye un middleware para registrar solicitudes HTTP y un sistema de autenticación para proteger las rutas clave.
 
 # Instalación
