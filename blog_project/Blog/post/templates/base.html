@@ -4,47 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #385ca0;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #385ca0;
-            font-weight: bold;
-        }
-        footer {
-            background-color: #385ca0;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'post/styles.css' %}">
 </head>
 <body>
 
