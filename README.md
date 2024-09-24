@@ -4,7 +4,7 @@ Trabajo Practico N3 - Programacion Web II
 Descripcion del proyecto
 El proyecto es una aplicación web tipo blog desarrollada con Django. Permite a los usuarios autenticados crear, ver, editar y eliminar publicaciones. Además, incluye un middleware para registrar solicitudes HTTP y un sistema de autenticación para proteger las rutas clave.
 
-##Instalación
+# Instalación
 
 Pasos para instalar y ejecutar el proyecto localmente:
 
@@ -16,7 +16,7 @@ Pasos para instalar y ejecutar el proyecto localmente:
     Realiza las migraciones de la base de datos para configurar las tablas necesarias.
     Ejecuta el servidor de desarrollo de Django para iniciar el proyecto.
 
-##Funcionalidades
+# Funcionalidades
 
 El proyecto cuenta con las siguientes funcionalidades principales:
 
@@ -26,7 +26,7 @@ El proyecto cuenta con las siguientes funcionalidades principales:
     Eliminar una publicación.
     Proteger rutas para que solo usuarios autenticados puedan crear, editar o eliminar publicaciones.
 
-##Dependencias
+# Dependencias
 
 El proyecto tiene las siguientes dependencias principales:
 
