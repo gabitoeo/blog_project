@@ -1,14 +1,8 @@
 # blog_project
 Trabajo Practico N3 - Programacion Web II
 
-Objetivo
-El objetivo de este trabajo práctico es que las/os estudiantes desarrollen un proyecto
-llamado Blog y una aplicación denominada post utilizando Django y el patrón de diseño
-MVT. Se espera que implementen funcionalidades esenciales para la gestión de
-publicaciones (post) en un blog, trabajando con vistas, plantillas y modelos, así como la
-integración con GitHub y el uso de un entorno virtual. En forma adicional se busca que los
-estudiantes puedan implementar un middleware personalizado y que habiliten y utilicen el
-middleware de autenticación que provee Django.
+Descripcion del proyecto
+El proyecto es una aplicación web tipo blog desarrollada con Django. Permite a los usuarios autenticados crear, ver, editar y eliminar publicaciones. Además, incluye un middleware para registrar solicitudes HTTP y un sistema de autenticación para proteger las rutas clave.
 
 ##Instalación
 
@@ -32,7 +26,7 @@ El proyecto cuenta con las siguientes funcionalidades principales:
     Eliminar una publicación.
     Proteger rutas para que solo usuarios autenticados puedan crear, editar o eliminar publicaciones.
 
-##ependencias
+##Dependencias
 
 El proyecto tiene las siguientes dependencias principales:
 
