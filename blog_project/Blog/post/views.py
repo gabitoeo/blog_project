@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from .forms import CustomUserCreationForm
 
+
+@method_decorator(login_required, name='dispatch')
 class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'content']
@@ -16,7 +18,7 @@ class PostCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
+    
 
 @method_decorator(login_required, name='dispatch')
 class PostListView(ListView):
@@ -59,15 +61,3 @@ def register(request):
         form = CustomUserCreationForm()
     return render(request, 'post/register.html', {'form': form})
 
-
-@method_decorator(login_required, name='dispatch')
-class PostCreateView(CreateView):
-    model = Post
-    fields = ['title', 'content']
-    template_name = 'post/post_form.html'
-    success_url = reverse_lazy('post-list')
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-    
